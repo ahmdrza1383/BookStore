@@ -1,7 +1,6 @@
-from django.shortcuts import render
 from django.views import generic
 
-from books.models import Book
+from .models import Book
 
 
 class BookListView(generic.ListView):
@@ -17,3 +16,7 @@ class BookDetailView(generic.DetailView):
     template_name = 'books/book_detail_view.html'
 
 
+class BookCreateView(generic.CreateView):
+    model = Book
+    fields = '__all__'
+    template_name = 'books/book_create_view.html'
