@@ -9,7 +9,7 @@
         <p>welcome {{ user.username }}</p>
         <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
-            <button type="submit">Log Out</button>
+            <button class="btn btn-danger" type="submit">Log Out</button>
         </form>
     {% else %}
         <a href="{% url 'login' %}">Log In</a> | <a href="{% url 'signup' %}">Sign Up</a>
