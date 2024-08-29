@@ -20,3 +20,4 @@ class BookCreateView(generic.CreateView):
     model = Book
     fields = '__all__'
     template_name = 'books/book_create_view.html'
+
