@@ -1,0 +1,23 @@
+{% extends '_base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+    حذف کتاب {{ book.title }}
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4" dir="rtl">
+
+        <div class="card shadow my-3">
+            <h5 class="card-header bg-danger text-light px-5">حذف کتاب</h5>
+            <div class="px-5 pt-3 pb-5">
+                <form method="POST">
+                    {% csrf_token %}
+                    <h1>آیا از حذف کتاب "{{ book.title }}" مطمئن هستید ؟</h1>
+                    <button type="submit" class="btn btn-danger mt-2">بله،حذف شود</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
